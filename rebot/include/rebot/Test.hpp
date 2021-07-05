@@ -1,0 +1,3 @@
+namespace rebot {
+char *hi();
+}
