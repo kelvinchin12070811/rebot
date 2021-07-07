@@ -390,3 +390,6 @@ FodyWeavers.xsd
 # CMake Stuffs
 out/*
 CMakeSettings.json
+
+# Documentations related
+docs/xml
