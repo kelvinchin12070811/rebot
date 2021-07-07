@@ -9,8 +9,21 @@ set(PROJECT_SOURCE_FILES
 )
 
 set(PROJECT_HEADER_FILES
-    "include/rebot/Version.hpp"
     "include/rebot/Test.hpp"
+    "include/rebot/types/Animation.hpp"
+    "include/rebot/types/Audio.hpp"
+    "include/rebot/types/Chat.hpp"
+    "include/rebot/types/ChatPhoto.hpp"
+    "include/rebot/types/Document.hpp"
+    "include/rebot/types/MaskPosition.hpp"
+    "include/rebot/types/Message.hpp"
+    "include/rebot/types/MessageEntity.hpp"
+    "include/rebot/types/PhotoSize.hpp"
+    "include/rebot/types/Sticker.hpp"
+    "include/rebot/types/Types.hpp"
+    "include/rebot/types/User.hpp"
+    "include/rebot/types/Video.hpp"
+    "include/rebot/Version.hpp"
 )
 
 add_library(${PROJECT_NAME} STATIC ${PROJECT_HEADER_FILES} ${PROJECT_SOURCE_FILES})
