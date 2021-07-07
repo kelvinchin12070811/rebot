@@ -23,19 +23,19 @@ struct User
      * 
      * This field determine if the user account is a Telegram bot account. True if the user is bot and false otherwise.
      */
-    bool is_bot;
+    bool isBot;
     /**
      * @brief User's first name
      * 
      * Optional, first name of the user.
      */
-    std::optional<std::string> first_name;
+    std::optional<std::string> firstName;
     /**
      * @brief User's Last name
      * 
      * Optional, last name of the user.
      */
-    std::optional<std::string> last_name;
+    std::optional<std::string> lastName;
     /**
      * @brief Username of the user.
      * 
@@ -48,7 +48,7 @@ struct User
      * Optional, define the language used by the user in
      * [IETF language tag](https://en.wikipedia.org/wiki/IETF_language_tag).
      */
-    std::optional<std::string> language_code;
+    std::optional<std::string> languageCode;
     /**
      * @brief Determine if the bot can join Telegram groups.
      * 
@@ -56,7 +56,7 @@ struct User
      * 
      * @note This field only returned by the getMe API.
      */
-    std::optional<bool> can_join_groups;
+    std::optional<bool> canJoinGroups;
     /**
      * @brief Determine if the bot is in privacy mode.
      * 
@@ -65,7 +65,7 @@ struct User
      * 
      * @not This field only returned by the getMe API.
      */
-    std::optional<bool> can_read_all_group_message;
+    std::optional<bool> canReadAllGroupMessage;
     /**
      * @brief Determine if the bot support inline queries.
      * 
@@ -73,6 +73,6 @@ struct User
      * 
      * @note This field only returned by the getMe API.
      */
-    std::optional<bool> supports_inline_queries;
+    std::optional<bool> supportsInlineQueries;
 };
 }
