@@ -8,12 +8,12 @@ import Path from "path"
 import React from "react"
 import ReactMarkdown  from "react-markdown"
 
-import SideBar, { getSideBarProps } from "../components/SideBar"
+import SideBar, { SideBarProps } from "../components/SideBar"
 
 interface HomeProps
 {
   content: string
-  sidebarProps: any
+  sidebarProps: SideBarProps
 }
 
 const Home: React.FC<HomeProps> = ({ content, sidebarProps }) => {
@@ -29,11 +29,11 @@ export default Home
 
 export const getStaticProps: GetStaticProps = async () => {
   const page = await fs.readFile(Path.join(process.cwd(), "../../readme.md"), 'utf-8')
-  
+
   return {
     props: {
       content: page,
-      sidebarProps: getSideBarProps()
+      sidebarProps: await (await fetch('http://localhost:3000/api/get-sidebar-props')).json() as SideBarProps
     }
   }
 }
