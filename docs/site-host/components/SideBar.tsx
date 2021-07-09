@@ -14,10 +14,10 @@ export interface SideBarProps
 
 const SideBar: React.FC<SideBarProps> = ({ structs }) => {
   return (
-    <Panel isOpen={ true } isBlocking={ false } type={ PanelType.customNear } customWidth="300px">
+    <aside id="main-sidebar" className="card">
       <h3>Structs</h3>
       <List items={ structs.map(elm => ({ name: elm })) }/>
-    </Panel>
+    </aside>
   )
 }
 export default SideBar

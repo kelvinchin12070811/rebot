@@ -1,11 +1,14 @@
 import {
+  List
 } from "@fluentui/react"
 import { promises as fs } from "fs"
 import {
   GetStaticProps,
 } from "next"
 import Path from "path"
-import React from "react"
+import React, {
+  useState,
+} from "react"
 import ReactMarkdown  from "react-markdown"
 
 import SideBar, { SideBarProps } from "../components/SideBar"
@@ -16,11 +19,18 @@ interface HomeProps
   sidebarProps: SideBarProps
 }
 
+let list: any = []
+for (let i = 0; i < 100; i++)
+  list.push({ name: i })
+
 const Home: React.FC<HomeProps> = ({ content, sidebarProps }) => {
   return (
     <>
       <SideBar { ...sidebarProps }/>
-      <ReactMarkdown>{ content }</ReactMarkdown>
+      <article className="card main-container">
+        <ReactMarkdown>{ content }</ReactMarkdown>
+        <List items={ list } />
+      </article>
     </>
   )
 }

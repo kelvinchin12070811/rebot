@@ -1,15 +1,11 @@
-import '../styles/globals.css'
+import '../styles/globals.scss'
 import type { AppProps } from 'next/app'
-
-import { ThemeProvider } from "@fluentui/react"
 
 import "@fluentui/react/dist/css/fabric.min.css"
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ThemeProvider>
-      <Component {...pageProps} />
-    </ThemeProvider>
+    <Component {...pageProps} />
   )
 }
 export default MyApp
