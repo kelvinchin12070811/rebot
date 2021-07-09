@@ -19,17 +19,12 @@ interface HomeProps
   sidebarProps: SideBarProps
 }
 
-let list: any = []
-for (let i = 0; i < 50; i++)
-  list.push({ name: i })
-
 const Home: React.FC<HomeProps> = ({ content, sidebarProps }) => {
   return (
     <>
       <SideBar { ...sidebarProps }/>
       <article className="card main-container">
         <ReactMarkdown>{ content }</ReactMarkdown>
-        <List items={ list } />
       </article>
     </>
   )

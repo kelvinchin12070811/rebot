@@ -1,5 +1,6 @@
 $sidebar-width: 250px;
 $sidebar-padding: 5px;
+$screen-size-threshold: 900px;
 
 * {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -17,14 +18,18 @@ body {
     box-shadow: 0px 0px 10px 1px gray;
 }
 
-.main-container {
-    margin-left: calc(#{$sidebar-width} + (5px * 2) + (5px * 2) + 10px);
-}
-
 #main-sidebar {
     float: left;
     width: $sidebar-width;
     max-width: $sidebar-width;
     margin-top: 0;
     margin-bottom: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+@media screen and (min-width: #{$screen-size-threshold}) {
+    .main-container {
+        margin-left: calc(#{$sidebar-width} + (5px * 2) + (5px * 2) + 10px);
+    }
 }

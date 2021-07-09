@@ -2,7 +2,15 @@
     margin-top: 15px;
     padding: 3px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
+    align-items: center;
     color: rgb(100, 100, 100);
+    clear: both;
+}
+
+@media screen and (min-width: 900px) {
+    .footer {
+        flex-direction: row;
+    }
 }

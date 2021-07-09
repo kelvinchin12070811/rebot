@@ -1,11 +1,15 @@
 import {
-  Stack,
+  initializeIcons,
+  List,
   Panel,
-  PanelType,
-  List
 } from "@fluentui/react"
 import Link from "next/link"
-import React from "react"
+import React, {
+  useState,
+  useEffect,
+} from "react"
+
+initializeIcons()
 
 export interface SideBarProps
 {
@@ -13,11 +17,42 @@ export interface SideBarProps
 }
 
 const SideBar: React.FC<SideBarProps> = ({ structs }) => {
-  return (
-    <aside id="main-sidebar" className="card">
+  const [winWidth, setWinWidth] = useState(0)
+  const [isShowSidebar, setShowSidebar] = useState(false)
+
+  const InnerElement = () => (
+    <>
       <h3>Structs</h3>
       <List items={ structs.map(elm => ({ name: elm })) }/>
-    </aside>
+    </>
   )
+
+  useEffect(() => {
+    const evHwnd = () => setWinWidth(typeof window === 'undefined' ? 0 : window.innerWidth)
+    evHwnd()
+
+    if (typeof window !== 'undefined')
+    {
+      window.addEventListener('resize', evHwnd)
+      return () => {
+        window.removeEventListener('resize', evHwnd)
+      }
+    }
+  })
+
+  if (winWidth >= 900)
+  {
+    return (
+      <aside id="main-sidebar" className="card hideOnSmallScreen">
+        <InnerElement />
+      </aside>
+    )
+  }
+  else
+  {
+    return (
+      <Panel isOpen={ isShowSidebar }><InnerElement /></Panel>
+    )
+  }
 }
 export default SideBar
