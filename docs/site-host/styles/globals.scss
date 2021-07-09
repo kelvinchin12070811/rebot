@@ -1,4 +1,4 @@
-$sidebar-width: 300px;
+$sidebar-width: 250px;
 $sidebar-padding: 5px;
 
 * {
@@ -18,7 +18,7 @@ body {
 }
 
 .main-container {
-    margin-left: calc(#{$sidebar-width} + (5px * 2) + (5px * 2));
+    margin-left: calc(#{$sidebar-width} + (5px * 2) + (5px * 2) + 10px);
 }
 
 #main-sidebar {

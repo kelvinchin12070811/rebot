@@ -20,7 +20,7 @@ interface HomeProps
 }
 
 let list: any = []
-for (let i = 0; i < 100; i++)
+for (let i = 0; i < 50; i++)
   list.push({ name: i })
 
 const Home: React.FC<HomeProps> = ({ content, sidebarProps }) => {
