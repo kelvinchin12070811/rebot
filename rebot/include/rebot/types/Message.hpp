@@ -16,6 +16,8 @@
 #include "rebot/types/Types.hpp"
 #include "rebot/types/User.hpp"
 #include "rebot/types/Video.hpp"
+#include "rebot/types/VideoNote.hpp"
+#include "rebot/types/Voice.hpp"
 
 namespace rebot::types {
 struct Message
@@ -44,5 +46,7 @@ struct Message
     std::optional<std::vector<PhotoSize>> photo;
     std::optional<Sticker> sticker;
     std::optional<Video> video;
+    std::optional<VideoNote> videoNote;
+    std::optional<Voice> voice;
 };
 }

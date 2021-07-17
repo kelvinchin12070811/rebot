@@ -23,8 +23,10 @@ set(PROJECT_HEADER_FILES
     "include/rebot/types/Types.hpp"
     "include/rebot/types/User.hpp"
     "include/rebot/types/Video.hpp"
+    "include/rebot/types/VideoNote.hpp"
+    "include/rebot/types/Voice.hpp"
     "include/rebot/Version.hpp"
- "include/rebot/types/VideoNote.hpp")
+)
 
 add_library(${PROJECT_NAME} STATIC ${PROJECT_HEADER_FILES} ${PROJECT_SOURCE_FILES})
 
